@@ -1,7 +1,9 @@
 import random
-tarr = list(range(20))
+tarr = list(range(10))
 random.shuffle(tarr)
-print(tarr)
+print("initial array: ", tarr)
+
+
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
     # loop through n-1 elements
@@ -18,16 +20,21 @@ def selection_sort( arr ):
         temp = arr[cur_index]
         arr[cur_index] = arr[smallest_index]
         arr[smallest_index] = temp
-    print(arr)
+    print("Selection sort: ", arr)
     return arr
 
 selection_sort(tarr)
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    for i in range(0, len(arr)-1):
+        for el in range(i+1, len(arr)):
+            if arr[i] > arr[el]:
+                arr[i], arr[el] = arr[el], arr[i]
+    print("Bubble sort: ", arr)
     return arr
 
+bubble_sort(tarr)
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
